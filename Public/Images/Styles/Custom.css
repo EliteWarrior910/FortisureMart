@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    font-family: century Gothic, CenturyGothic, sans-serif;
+}
+
+html,
+body{
+    height: auto;
+    background-color: #ffffff;
+}
+navbar h1{
+    text-align: left;
+}
+
+.btn-shop{
+    float: right;
+    margin: auto;
+    margin-right: 165px;
+    padding: 7px 45px 7px 45px;
+    font-weight: bold;
+    border: none;
+}
+
+.product-card-one,
+.product-card-two,
+.product-card-three{
+    width: 290px;
+    height: 320px;
+    box-shadow: 5px 4px 10px 0px rgba(0, 0, 0, 0.45);
+    background-color: #000767;
+}
+
+.product-header-text{
+    background-color: #717171;
+    font-weight: bold;
+}
+
+.product-card-one > img,
+.product-card-two > img,
+.product-card-three > img{
+    height: 170px;
+    margin: auto;
+}
+
+.product-card-one > button,
+.product-card-two > button,
+.product-card-three > button{
+    font-size: 14px;
+}
