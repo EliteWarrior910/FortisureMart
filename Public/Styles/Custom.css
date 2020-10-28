@@ -7,39 +7,18 @@ html,
 body{
     height: auto;
     background-color: #ffffff;
+    margin: 0;
 }
 navbar h1{
     text-align: left;
 }
 
 .btn-shop{
-    float: right;
     margin: auto;
     margin-right: 165px;
     padding: 7px 45px 7px 45px;
     font-weight: bold;
     border: none;
-}
-
-.product-card-one,
-.product-card-two,
-.product-card-three{
-    width: 290px;
-    height: 320px;
-    box-shadow: 5px 4px 10px 0px rgba(0, 0, 0, 0.45);
-    background-color: #000767;
-}
-
-.product-header-text{
-    background-color: #717171;
-    font-weight: bold;
-}
-
-.product-card-one > img,
-.product-card-two > img,
-.product-card-three > img{
-    height: 170px;
-    margin: auto;
 }
 
 .product-card-one > button,
@@ -54,10 +33,118 @@ navbar h1{
     padding-top: 15px;
     padding-bottom: 15px;
 }
-.btn-contact{
-    background-color: aliceblue;
-    margin: auto;
-    padding: 10px 50px 10px 50px;
-    font-weight: bold;
-    border: none;
+
+.page-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
 }
+    .navbar-grid{
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto;
+    background-color: #000767; 
+    position: sticky; top: 0;
+    }
+        .navbar-title{
+            grid-row: 1;
+            grid-column: 1;
+        }
+        .navbar-but{
+            grid-row: 1;
+            grid-column: 7;
+        }
+        .navbar-cart{
+            grid-row:1;
+            grid-column: 9;
+        }
+
+    .text-grid{
+        display: grid;
+        grid-row:2;
+        grid-template-columns: 1fr 25% 1fr 1fr 58%;
+        grid-template-rows: 1fr 1fr;
+    }
+        .text-title{
+            grid-column: 2;
+            grid-row: 2;
+            font-weight: bold;
+        }
+        .text-mass{
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+    .card-grid{
+        display: grid;
+        grid-row: 3;
+        grid-column: 1;
+        grid-template-columns: 25% 1fr 1fr 1fr;
+        grid-template-rows: 50px 164px auto 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        width: 290px;
+        height: 320px;
+        box-shadow: 5px 4px 10px 0px rgba(0, 0, 0, 0.45);
+        background-color: #000767;
+    }
+        .card-grid1{
+            grid-column: 2
+        }
+        .card-title1{
+            grid-row: 1;
+            background-color: #717171;
+            font-weight: bold;
+        }
+        .card-image1{
+            grid-row: 3;
+            height: 170px;
+            margin: auto;
+        }
+        .card-desc1{
+            grid-row: 5;
+        }
+        .card-but{
+            grid-row: 10;
+        }
+    .foot-grid{
+        display: grid;
+        grid-row: 5;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        background-color: #000767;
+        height: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-top: 1px solid grey;
+    }
+        .foot-left{
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .foot-centre{
+            grid-column: 2;
+        }
+        .foot-right{
+            grid-column: 3;
+            text-align: center;
+            margin-right: 10%;
+            margin-top: 220px;
+        }
+        .btn-contact{
+            grid-column: 2;
+            background-color: aliceblue;
+            margin: auto;
+            padding: 10px 50px 10px 50px;
+            font-weight: bold;
+            border: none;
+        }
+        .form-contact{
+            grid-column: 2;
+            width: 100%
+        }
+        .form-contact > textarea,
+        .form-row{
+            margin-bottom: 15px;
+        }
