@@ -1,7 +1,14 @@
 <?php
     include './View/Header.php';
+    include './Controller/db_conn.php';
+    include './Controller/CardsPage.php';
+    include './Controller/update-cart.php';
+    include './Model/query-products.php';
     include './View/Navbar.php';
-
+    $database = new Database();
+    $db = $database->connect();
+    $product =new Product($db);
+    $productGet = $product->prodRead();
 ?>
         <!-- Informational Section - Internal styles -->
             <div class='our-info-grid'>
@@ -38,13 +45,18 @@
             <div class='trending-container-grid'>
                 <h2>Trending Products</h2>
                 <?php
-                    $ProductInfo = array (
-                        array("Shoes", "shoes-white", "The best shoes around.", 64.20),
-                        array("Shirt", "t-shirt-black", "The best shirt around.", 14.20),
-                        array("Jeans", "jeans-black", "The best pants around.", 19.69),
-                    );
-                    
-                    include './Controller/CardsPage.php';
+                    $colNum = 2;
+                    while ($row = $productGet->fetch(PDO::FETCH_ASSOC)){
+                        $prodCode = $row['productCode'];
+                        $prodName = $row['productName']; 
+                        $prodImage = $row['productImage']; 
+                        $prodType = $row['productType']; 
+                        $prodDesc = $row['productDescription']; 
+                        $prodPrice = bcdiv($row['buyPrice'], 1, 2); 
+
+                        makeProductCard($prodCode, $prodName, $prodImage, $prodType, $prodDesc, $prodPrice, $colNum);
+                        $colNum++;
+                    }
                 ?> 
             </div>
         <!-- Trending Section -->

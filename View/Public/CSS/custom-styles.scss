@@ -38,6 +38,16 @@ body {
   padding-top: 15px;
   font-size: 46px;
 }
+
+.cart-container{
+  margin-top: 15px;
+}
+.items-in-cart{
+  font-weight:bold;
+  float: right;
+  margin-right: 16%;
+  z-index: 2;
+}
 .shopping-cart-img{
   grid-column: 3;
   float: right; 
@@ -45,6 +55,13 @@ body {
   margin-right: 15%;
   cursor: pointer;
 }
+
+.modal-header,
+.modal-footer{
+  background-color:$main-color;
+}
+
+
 .our-info-grid{
   display:grid;
   grid-template-columns: 1fr 38%;

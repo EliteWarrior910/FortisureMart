@@ -1,26 +1,25 @@
 <?php
-$Column2 = 2;
 
-for($index = 0; $index < count($ProductInfo); $index++)
-{
+function makeProductCard($prodCode, $prodName, $prodImage, $prodType, $prodDesc, $prodPrice, $colNum){
     echo"
-        <div class='product-card-grid' style='grid-column: {$Column2}; grid-row: 1;'>
+        <div class='product-card-grid' style='grid-column: {$colNum}; grid-row: 1;'>
             <p class='product-header-text'> 
-                <span>Fortisure</span> <span>{$ProductInfo[$index][0]}</span>
+                <span>Fortisure</span> <span>{$prodType}</span>
             </p>
             
-            <img src='./View/Public/Images/Products/{$ProductInfo[$index][1]}.jpg'>
+            <img src='./View/Public/Images/Products/{$prodImage}.png'>
             
-            <p class='product-card-desc'>
-                {$ProductInfo[$index][2]}
-            </p>
+            <p class='product-card-desc'>{$prodName}.<br>{$prodDesc}.</p>
 
-            <button class='btn-add-to-cart btn btn-success'>
-                Add to Cart | <span>\${$ProductInfo[$index][3]}</span>
-            </button>
+            <form method='post' action=''>
+                <input name='code' value='{$prodCode}' hidden/>
+                <input name='name' value='{$prodName}' hidden/>
+                <input name='img' value='{$prodImage}' hidden/>
+                <input name='price' value='{$prodPrice}' hidden/>
+                <button type='submit' class='btn-add-to-cart btn btn-success'>Add to Cart | <span>\${$prodPrice}</span></button>
+            </form>
         </div>
     ";
-    $Column2++;
 }
 
 
