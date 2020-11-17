@@ -4,11 +4,14 @@
     include './Controller/CardsPage.php';
     include './Controller/update-cart.php';
     include './Model/query-products.php';
-    include './View/Navbar.php';
+
     $database = new Database();
-    $db = $database->connect();
-    $product =new Product($db);
+    $DB = $database->connect();
+    $product =new Product($DB);
     $productGet = $product->prodRead();
+
+    include './Controller/SubmitForm.php';
+    include './View/Navbar.php';
 ?>
         <!-- Informational Section - Internal styles -->
             <div class='our-info-grid'>
@@ -62,5 +65,4 @@
         <!-- Trending Section -->
 <?php
 include './View/Footer.php';
-include './Controller/SubmitForm.php';
 ?>

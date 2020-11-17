@@ -3,7 +3,7 @@ class Database{
     private $host = 'fittraindb.mysql.database.azure.com:3306';
     private $user = 'fittrain@fittraindb';
     private $pass = 'Train3435';
-    private $dbName = 'fortisuremart';
+    private $dbName = 'fortisuremart-ethan';
 
     public $conn;
 
