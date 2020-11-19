@@ -11,13 +11,8 @@ function makeProductCard($prodCode, $prodName, $prodImage, $prodType, $prodDesc,
             
             <p class='product-card-desc'>{$prodName}.<br>{$prodDesc}.</p>
 
-            <form method='post' action=''>
-                <input name='code' value='{$prodCode}' hidden/>
-                <input name='name' value='{$prodName}' hidden/>
-                <input name='img' value='{$prodImage}' hidden/>
-                <input name='price' value='{$prodPrice}' hidden/>
-                <button type='submit' class='btn-add-to-cart btn btn-success'>Add to Cart | <span>\${$prodPrice}</span></button>
-            </form>
+                <button type='submit' class='btn-add-to-cart btn btn-success' onclick=\"ajaxCard('$prodCode', '$prodName', '$prodImage', '$prodPrice')\">Add to Cart | <span>\${$prodPrice}</span></button>
+
         </div>
     ";
 }
